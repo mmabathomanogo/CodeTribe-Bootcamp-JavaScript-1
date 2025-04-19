@@ -117,9 +117,3 @@ cardValues.forEach((letter) => {
   const card = createCard(letter);
   gameContainer.appendChild(card);
 });
-
-
-cardValues.forEach((letter) => {
-  const card = createCard(letter);
-  gameContainer.appendChild(card);
-});
