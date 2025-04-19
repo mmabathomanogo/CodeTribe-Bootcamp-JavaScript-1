@@ -96,6 +96,29 @@ function resetBoard() {
   [firstCard, secondCard, lockBoard] = [null, null, false];
 }
 
+// Display game instructions and wish the player good luck
+const instructions = document.createElement("div");
+instructions.className = "instructions";
+instructions.innerHTML = `
+  <h2>🎯 Memory Game Instructions</h2>
+  <p>Find all the matching pairs of cards. You can flip only two cards at a time.</p>
+  <ul>
+    <li>Click on a card to reveal its hidden letter.</li>
+    <li>If two cards match, they will stay face up.</li>
+    <li>If they don’t match, they will flip back after 1 second.</li>
+    <li>The game ends when all 8 pairs are matched.</li>
+  </ul>
+  <p style="font-weight: bold;">💖 Good luck and have fun!</p>
+`;
+
+document.body.prepend(instructions);
+
+cardValues.forEach((letter) => {
+  const card = createCard(letter);
+  gameContainer.appendChild(card);
+});
+
+
 cardValues.forEach((letter) => {
   const card = createCard(letter);
   gameContainer.appendChild(card);
